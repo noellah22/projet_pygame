@@ -2,7 +2,7 @@ import pygame
 from pygame.locals import *
 import random
 
-# le but du jeu est de sévader de l'école
+# le but du jeu est de s'évader de l'école
 
 class Personnage(pygame.sprite.Sprite):
     def __init__(self):
@@ -29,6 +29,10 @@ class Armes(pygame.sprite.Sprite):
        self.rect.x = x
        self.rect.y = y
        self.speed = 2
+
+class Ennemi(pygame.sprite.Sprite):
+    def __init__(self, x, y):
+        super().__init__()
 
 class Crayon(Armes): # contre prof de français
     def __init__(self, x, y):
@@ -62,10 +66,12 @@ class Ennemi(pygame.sprite.Sprite): # les ennemis sont les profs
 class ProfMaths(Ennemi):
     def __init__(self, x, y):
        super().__init__()
+       self.image = pygame.image.load("maths.png").convert_alpha()
 
 class ProfChimie(Ennemi):
     def __init__(self, x, y):
         super().__init__()
+        self.image = pygame.image.load("chimie.png").convert_alpha()
 
 class ProfSport(Ennemi):
     def __init__(self, x, y):
@@ -74,6 +80,7 @@ class ProfSport(Ennemi):
 class ProfFrancais(Ennemi):
     def __init__(self, x, y):
         super().__init__()
+        self.image = pygame.image.load("francais.png").convert_alpha()
 
 class Directeur(Ennemi): # c'est le boss de fin du jeu
     def __init__(self, x, y):
