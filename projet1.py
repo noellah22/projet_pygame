@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 import random
+import time
 
 
 # le but du jeu est de s'évader de l'école
@@ -52,27 +53,12 @@ class ArmesCrayon(pygame.sprite.Sprite):
         self.rect.y = y
         self.speed = 2
 
-
 pygame.init()
 LARGEUR = 600
-HAUTEUR = 600
+HAUTEUR = 400
 fenetre = pygame.display.set_mode((LARGEUR, HAUTEUR))
-clock = pygame.time.Clock()
-perso = Personnage()
-liste_des_sprites = pygame.sprite.LayeredUpdates()
-liste_des_sprites.add(perso)
-running = Truepygame.key.set_repeat(40, 30)
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-        if event.type == KEYDOWN:
-            if event.key == K_a:
-                perso.bouger_gauche()
-        if event.key == K_d:
-            perso.bouger_droite()
-    if event.key == K_SPACE:
-        pass
+running = True
+pygame.key.set_repeat(40, 30)
 
 crayons = []
 nombre = random.randint(1, 100)
@@ -95,28 +81,26 @@ pygame.init()
 LARGEUR = 600
 HAUTEUR = 600
 fenetre = pygame.display.set_mode((LARGEUR, HAUTEUR))
+
+
 clock = pygame.time.Clock()
-perso = Personnage()
+"""perso = Personnage()"""
 liste_des_sprites = pygame.sprite.LayeredUpdates()
-liste_des_sprites.add(perso)
-running = True
+"""liste_des_sprites.add(perso)"""
 pygame.key.set_repeat(40, 30)
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
         if event.type == KEYDOWN:
-            if event.key == K_a:
+            if event.key == K_q:
+                running = False
+            elif event.key == K_a:
                 perso.bouger_gauche()
-            if event.key == K_d:
+            elif event.key == K_d:
                 perso.bouger_droite()
-            if event.key == K_SPACE:
+            elif event.key == K_SPACE:
                 pass
-    """
-               nouveau_crayon = Crayon(crayon.rect.x + 10, crayon.rect.y - 10)
-               crayon.append(nouveau_crayon)
-               liste_des_sprites.add(nouveau_crayon)
-
     for crayon in crayons:
         crayon.update()
         for ennemi in ennemis:
@@ -125,7 +109,7 @@ while running:
                 crayons.remove(crayon)
                 ennemi.kill()
                 crayon.kill()
-    """
+
     fenetre.fill((0, 0, 0))
     liste_des_sprites.draw(fenetre)
     pygame.display.flip()
