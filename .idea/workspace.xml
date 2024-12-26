@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8c0ee38-8418-41f5-8d86-1bd5939d3850" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ecolier3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphique.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/questions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/personnages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet 1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphique.py" beforeDir="false" afterPath="$PROJECT_DIR$/graphique.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projet1.py" beforeDir="false" afterPath="$PROJECT_DIR$/projet1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/questions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,23 +40,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Test_Popup.executor": "Run",
-    "Python.graphique.executor": "Run",
-    "Python.projet 1.executor": "Debug",
-    "Python.projet1.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "nouvelle__branche__meriem",
-    "last_opened_file_path": "/Users/Ecole/PycharmProjects/projet_pygame"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Test_Popup.executor&quot;: &quot;Run&quot;,
+    &quot;Python.graphique.executor&quot;: &quot;Run&quot;,
+    &quot;Python.projet 1.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.projet1.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;nouvelle__branche__meriem&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/Ecole/PycharmProjects/projet_pygame&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.graphique">
+  <component name="RunManager" selected="Python.projet1">
     <configuration name="Test_Popup" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="projet_pygame" />
       <option name="ENV_FILES" value="" />
@@ -145,5 +144,16 @@
       <updated>1731420777061</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
