@@ -3,7 +3,8 @@ from pygame.locals import *
 import random
 import time
 from datetime import timedelta
-from questions import *
+#from questions import *
+#from personnages import *
 
 # La classe Parcours décrit un chemin à emprunter. 0 indique le couloir sur lequel on peut passer.
 # 1 indique un emplacement où il y a un bâtiment (là où l'on peut pas passer)
@@ -39,7 +40,7 @@ class Parcours:
                          (y * self.taille_cellule, x * self.taille_cellule, self.taille_cellule, self.taille_cellule))
 
     # Dessine les plans vus de dessus du batiment en fonction de la direction empruntée par l'écolier
-    def dessiner_tout(self, ecran, direction, ecolier):
+    def dessiner_tout(self, ecran, direction, ecolier, directeur, les_profs):
         carreau_blanc = (255, 255, 255)
         carreau_noir = (0, 0, 0)
         carreau_rouge = (255, 0, 0)
@@ -58,9 +59,10 @@ class Parcours:
                 self.dessiner_carreau(ecran, i, j, couleur)
         # La position de l'écolier est marquée en rouge
         self.dessiner_carreau(ecran, self.position[0], self.position[1], carreau_rouge)
-        # Dessine l'écolier en image
-        ecolier.dessiner(ecran, self.taille_cellule, self.position)
-        #professeur_chimie.dessiner(ecran, self.taille_cellule, self.position)
+        directeur.dessiner(ecran, self.taille_cellule)
+        for prof in les_profs:
+            prof.dessiner(ecran, self.taille_cellule)
+        ecolier.dessiner(ecran, self.taille_cellule, self.position) # Dessine l'écolier en image
         pygame.display.flip()
 
     def verifier_reponse(self):
@@ -80,35 +82,32 @@ class Parcours:
                     if touche == K_ESCAPE:
                         return 0
 
-    def question_reponse(self, ecran, x, y):
-        if self.couloir[x][y] == 2:
-            for q in questions_profs:
-                if q.position[0] == x and q.position[1] == y:
-                    question = q.question
-                    reponse1 = "a) " + q.reponse1
-                    reponse2 = "b) " + q.reponse2
-                    reponse3 = "c) " + q.reponse3
-                    reponse_juste = q.reponse_juste
-            self.position[0] = x
-            self.position[1] = y
-            font = pygame.font.Font(None, 25)
-            couleur_texte = (0, 0, 0)
-            couleur_rectangle = (200, 200, 200)
-            dimensions_rectangle = (100, 100, 400, 200)
-            texte_0 = font.render(question, True, couleur_texte)
-            texte_1 = font.render(reponse1, True, couleur_texte)
-            texte_2 = font.render(reponse2, True, couleur_texte)
-            texte_3 = font.render(reponse3, True, couleur_texte)
-            #ecran2 = pygame.display.set_mode((200, 200))
-            pygame.draw.rect(ecran, couleur_rectangle, dimensions_rectangle)
-            ecran.blit(texte_0, (120, 120))
-            ecran.blit(texte_1, (120, 150))
-            ecran.blit(texte_2, (120, 170))
-            ecran.blit(texte_3, (120, 190))
-            #ecolier.dessiner(ecran, self.taille_cellule, self.position)
-            pygame.display.flip()
-            reponse = self.verifier_reponse()
-            return(reponse_juste == reponse)
+    def question_reponse(self, ecran, x, y, les_profs):
+        for prof in les_profs:
+            if prof.question.position[0] == x and prof.question.position[1] == y:
+                question = prof.question.question
+                reponse1 = "a) " + prof.question.reponse1
+                reponse2 = "b) " + prof.question.reponse2
+                reponse3 = "c) " + prof.question.reponse3
+                reponse_juste = prof.question.reponse_juste
+        self.position[0] = x
+        self.position[1] = y
+        font = pygame.font.Font(None, 25)
+        couleur_texte = (0, 0, 0)
+        couleur_rectangle = (200, 200, 200)
+        dimensions_rectangle = (100, 100, 400, 200)
+        texte_0 = font.render(question, True, couleur_texte)
+        texte_1 = font.render(reponse1, True, couleur_texte)
+        texte_2 = font.render(reponse2, True, couleur_texte)
+        texte_3 = font.render(reponse3, True, couleur_texte)
+        pygame.draw.rect(ecran, couleur_rectangle, dimensions_rectangle)
+        ecran.blit(texte_0, (120, 120))
+        ecran.blit(texte_1, (120, 150))
+        ecran.blit(texte_2, (120, 170))
+        ecran.blit(texte_3, (120, 190))
+        pygame.display.flip()
+        reponse = self.verifier_reponse()
+        return(reponse_juste == reponse)
 
     def dialogue_directeur(self, ecran, score_total):
         couleur_texte = (0, 0, 0)
@@ -158,7 +157,7 @@ class Parcours:
                     attend_touche = False
 
     # Déplacement de l'écolier
-    def changer_position(self, ecran, direction, ecolier):
+    def changer_position(self, ecran, direction, ecolier, les_profs):
         #self.prec_position = self.position
         x = self.position[0] + direction[0]
         y = self.position[1] + direction[1]
@@ -171,7 +170,7 @@ class Parcours:
                 #ecolier.dessiner(ecran, self.taille_cellule, self.position)
                 pygame.display.flip()
                 if self.couloir[x][y] == 2:
-                    reponse_juste = self.question_reponse(ecran, x, y)
+                    reponse_juste = self.question_reponse(ecran, x, y, les_profs)
                     ecolier.modifier_nb_points (reponse_juste)
             elif self.couloir[x][y] == 3:
                 self.dialogue_directeur(ecran, ecolier.score_total)

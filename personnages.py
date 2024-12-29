@@ -21,15 +21,14 @@ class Professeur(Personnage):
     def dessiner(self, ecran, taille):
         position = self.question.position
         super().dessiner(ecran, taille, position)
-        print("Position", position[0], position[1])
 
 class Directeur(Personnage):
     def __init__(self, nom, dessin, bareme):
         super().__init__(nom, dessin)
         self.bareme = bareme
 
-    def dessiner(self, ecran, taille, position):
-        position = [15,9]
+    def dessiner(self, ecran, taille):
+        position = [9,15]
         super().dessiner(ecran, taille, position)
 
 # La classe Ecolier décrit l'acteur du jeu qui se déplace pour sortir
