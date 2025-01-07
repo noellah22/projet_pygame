@@ -175,6 +175,19 @@ class Parcours:
             elif self.couloir[x][y] == 3:
                 self.dialogue_directeur(ecran, ecolier.score_total)
 
+    """def affiche_consignes (self, ecran, fonte, texte_1):
+        self.ecran = ecran
+        couleur_texte = (0, 0, 0)
+        couleur_rectangle = (200, 200, 200)
+        texte_1 = fonte.render("Utilisez les flèches pour vous déplacer", True, couleur_texte)
+        dimensions_rectangle = (100, 100, 450, 200)
+        pygame.draw.rect(ecran, couleur_rectangle, dimensions_rectangle)
+        ecran.blit(texte_1, (120, 120))
+        pygame.display.flip()"""
+
+
+
+
 
 
 

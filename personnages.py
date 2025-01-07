@@ -17,6 +17,7 @@ class Professeur(Personnage):
     def __init__(self, nom, dessin, question):
         super().__init__(nom, dessin)
         self.question = question
+        self.personne = pygame.transform.scale_by(self.personne, 0.2)
 
     def dessiner(self, ecran, taille):
         position = self.question.position
@@ -26,6 +27,7 @@ class Directeur(Personnage):
     def __init__(self, nom, dessin, bareme):
         super().__init__(nom, dessin)
         self.bareme = bareme
+        self.personne = pygame.transform.scale_by(self.personne, 0.07)
 
     def dessiner(self, ecran, taille):
         position = [9,15]
@@ -36,6 +38,7 @@ class Ecolier(Personnage):
     def __init__(self, nom, dessin):
         super().__init__(nom, dessin)
         self.score_total = 0
+        self.personne = pygame.transform.scale_by(self.personne, 0.23)
 
     def modifier_nb_points(self, reponse_juste):
         if reponse_juste:

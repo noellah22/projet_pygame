@@ -9,14 +9,14 @@ from personnages import *
 
 pygame.init()
 
-ecolier = Ecolier("Élève", "ecolier3.jpeg")
-professeur_chimie = Professeur("Prof de chimie", "prof-2.png", question_chimie)
-professeur_geo = Professeur("Prof de geo", "prof-2.png", question_geo)
-professeur_aaaa = Professeur("Prof de aaa", "prof-2.png",question_aaaa)
-professeur_bbbb = Professeur("Prof de bbb", "prof-2.png", question_bbbb)
-professeur_cccc = Professeur("Prof de ccc", "prof-2.png", question_cccc)
+ecolier = Ecolier("Élève", "ecolier.png")
+professeur_chimie = Professeur("Prof de chimie", "profs.png", question_chimie)
+professeur_geo = Professeur("Prof de geo", "profs.png", question_geo)
+professeur_aaaa = Professeur("Prof de aaa", "profs.png",question_aaaa)
+professeur_bbbb = Professeur("Prof de bbb", "profs.png", question_bbbb)
+professeur_cccc = Professeur("Prof de ccc", "profs.png", question_cccc)
 les_profs = [professeur_chimie, professeur_geo, professeur_aaaa, professeur_bbbb, professeur_cccc]
-directeur = Directeur("Monsieur le Directeur", "directeur.jpg", 8 )
+directeur = Directeur("Monsieur le Directeur", "directeur.png", 8 )
 
 parcours = Parcours()
 ecran = pygame.display.set_mode((parcours.longueur_fenetre, parcours.largeur_fenetre))
