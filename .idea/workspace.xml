@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8c0ee38-8418-41f5-8d86-1bd5939d3850" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/directeur.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecolier3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphique.py" beforeDir="false" afterPath="$PROJECT_DIR$/graphique.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/personnages.py" beforeDir="false" afterPath="$PROJECT_DIR$/personnages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prof-2.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/projet1.py" beforeDir="false" afterPath="$PROJECT_DIR$/projet1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/questions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +54,7 @@
     &quot;Python.projet 1.executor&quot;: &quot;Debug&quot;,
     &quot;Python.projet1.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;noellah__branche__v2&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/Ecole/PycharmProjects/projet_pygame&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
@@ -111,6 +118,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (Pygame)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -128,7 +136,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-abccbe9d933a-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.20224.428" />
+        <option value="bundled-python-sdk-d7ad00fb9fc3-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23726.102" />
       </set>
     </attachedChunks>
   </component>

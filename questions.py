@@ -1,4 +1,4 @@
-# La classe Question décrit chacune des questionnes que chaque prof va poser
+# La classe Question décrit chacune des questions que chaque prof va poser
 class Question:
     def __init__(self, titre, question, reponse1, reponse2, reponse3, reponse_juste, position):
         self.titre = titre
