@@ -40,7 +40,7 @@ class Parcours:
                texte_1 = fonte.render("Utilisez les flèches pour vous déplacer.", True, couleur_texte)
                texte_2 = fonte.render("Allez voir vos professeurs pour obtenir des points.", True, couleur_texte)
                texte_3 = fonte.render("Si vous avez au moins 8 points, dirigez-vous vers la sortie.", True, couleur_texte)
-               texte_4 = fonte.render("Votre scrore sera affiché en haut de la fenêtre", True, couleur_texte)
+               texte_4 = fonte.render("Votre score est affiché en haut de la fenêtre.", True, couleur_texte)
                texte_5 = fonte.render("Si vous ratez, retournez voir vos professeurs.", True, couleur_texte)
                texte_6 = fonte.render("Bonne chance !", True, couleur_texte)
                dimensions_rectangle = (70, 70, 520, 240)
@@ -137,6 +137,8 @@ class Parcours:
         couleur_texte = (0, 0, 0)
         couleur_rectangle = (200, 200, 200)
         dimensions_rectangle = (100, 100, 400, 200)
+        # Introduire la question
+        texte_prof = font.render(prof.nom + " :", True, couleur_texte)
         # Pose la question dans le rectangle ci-dessus
         texte_0 = font.render(question, True, couleur_texte)
         texte_1 = font.render(reponse1, True, couleur_texte)
@@ -144,19 +146,20 @@ class Parcours:
         texte_3 = font.render(reponse3, True, couleur_texte)
         pygame.draw.rect(ecran, couleur_rectangle, dimensions_rectangle)
         # Afficher les textes
-        ecran.blit(texte_0, (120, 120))
-        ecran.blit(texte_1, (120, 150))
-        ecran.blit(texte_2, (120, 170))
-        ecran.blit(texte_3, (120, 190))
+        ecran.blit(texte_prof, (120, 120))
+        ecran.blit(texte_0, (120, 150))
+        ecran.blit(texte_1, (120, 180))
+        ecran.blit(texte_2, (120, 200))
+        ecran.blit(texte_3, (120, 220))
         pygame.display.flip() # Rafraîchir le pop up des questions
-        reponse = self.verifier_reponse() # réponse 1, 2 ou 3
+        reponse = self.verifier_reponse() # Réponse 1, 2 ou 3
         return(reponse) # Donne la réponse donnée
 
     # Fonction pour parler avec le directeur en fonction du score obtenu par l'écolier
-    def dialogue_directeur(self, ecran, ecolier, les_profs):
+    def dialogue_directeur(self, ecran, ecolier, les_profs, directeur):
         couleur_texte = (0, 0, 0)
         fonte = pygame.font.Font(None, 25)
-        texte_1 = fonte.render("Directeur : ", True, couleur_texte)
+        texte_1 = fonte.render(directeur.nom + " :", True, couleur_texte)
         if ecolier.score_total >= 8: # En fonction du score/nombre de points on affiche échec ou réussite
             self.afficher_reussite(ecran, fonte, texte_1)
         else:
@@ -207,7 +210,7 @@ class Parcours:
                     attend_touche = False
 
     # Déplacement de l'écolier
-    def changer_position(self, ecran, direction, ecolier, les_profs):
+    def changer_position(self, ecran, direction, ecolier, les_profs, directeur):
         x = self.position[0] + direction[0]
         y = self.position[1] + direction[1]
         # Vérifie que l'on sorte pas du couloir
@@ -225,4 +228,4 @@ class Parcours:
                             else :
                                 ecolier.modifier_score(-4) # Réponse fausse alors -4 points
             elif self.couloir[x][y] == 3: # Vérifie si on va chez le directeur(sortie)
-                self.dialogue_directeur(ecran, ecolier, les_profs)
+                self.dialogue_directeur(ecran, ecolier, les_profs, directeur)

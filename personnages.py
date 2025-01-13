@@ -22,7 +22,6 @@ class Professeur(Personnage):
         self.question = question # Associer avec une question
         self.personne = pygame.transform.scale_by(self.personne, 0.2) # Réduire la taille de l'image
         self.deja_visite = False
-        self.deja_repondu_juste = False
 
     # Afficher où se trouve le professeur en fonction de la position de sa question
     def dessiner(self, ecran, taille):
