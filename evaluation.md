@@ -15,11 +15,12 @@ Vous avez fait un très bon travail avec PyGame ! En particulier, la Programmati
 | Le programme comporte au moins 4 classes, chacune ayant des attributs et des méthodes. | 4 pts  |  4pts |   |
 | Le programme comporte au moins une classe utilisant l'héritage de manière pertinente. | 2 pts  | 2pts  |   |
 | **Git et GitHub**                   |            |                |              |
-| Le projet a été réalisé en collaboration sur GitHub| 1 pts  | 1pt  |   |
-| Différentes branches ont été créées et fusionnées au long du projet| 1 pts  | 0.25pt  | Seulement 3 branches ont été créées et fusionnées  |
-| Chaque membre du groupe a push ses propres modifications dans sa propre branche| 1 pts  |  0pt |  Tous les membres n'ont pas contribué au projet sur GitHub. De plus, le système de branche n'a pas été utilisé pour collaborer de manière efficace |
-| Des commits réguliers ont permis d'ajouter des fonctionnalités petit à petit| 1 pts  | 0.5pt  | Seulement 18 commits pour tout le projet. Cela signifie que de grosses modifications ont été effectuées sans les commit  |
+| Le projet a été réalisé en collaboration sur GitHub| 1 pt  | 1pt  |   |
+| Différentes branches ont été créées et fusionnées au long du projet| 1 pt  | 0.25pt  | Seulement 3 branches ont été créées et fusionnées  |
+| Chaque membre du groupe a push ses propres modifications dans sa propre branche| 1 pt  |  0pt |  Tous les membres n'ont pas contribué au projet sur GitHub. De plus, le système de branche n'a pas été utilisé pour collaborer de manière efficace |
+| Des commits réguliers ont permis d'ajouter des fonctionnalités petit à petit| 1 pt  | 0.5pt  | Seulement 18 commits pour tout le projet. Cela signifie que de grosses modifications ont été effectuées sans les commit  |
 
 ## Note
 17.75/21pts
+
 5.2/6
